@@ -1,46 +1,60 @@
-# npm-search
+# NPM Search
 
-This template should help get you started developing with Vue 3 in Vite.
+![NPM Search](app_screenshot.png)
 
-## Recommended IDE Setup
+The NPM Search is a user-friendly interface that allows users to search for packages available on the [Node Package Manager (NPM)](https://www.npmjs.com/) registry. This application provides a seamless experience for developers to discover, explore, and learn about various NPM packages that can enhance their projects.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Features
 
-## Type Support for `.vue` Imports in TS
+- **Quick and Efficient Search**: The application offers a powerful search functionality that enables users to quickly find NPM packages by name, keywords, or descriptions.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- **Package Details**: Users can view detailed information about a specific package, including its name, version, description, author, license, dependencies, and more.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- **Sorting and Filtering**: Users can sort search results based on relevance, popularity, or date. Filtering options allow users to narrow down results by scope, keywords, and more.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- **Interactive UI**: The user interface is designed to be intuitive and responsive, providing a smooth experience across different devices and screen sizes.
 
-## Customize configuration
+- **Package Statistics**: Gain insights into package popularity, weekly downloads, and GitHub repository stars to help users make informed decisions.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Installation and Usage
 
-## Project Setup
+1. Clone this repository to your local machine.
+   ```
+   git clone https://github.com/xqsit94/npm-search.git
+   ```
 
-```sh
-npm install
-```
+2. Navigate to the project directory.
+   ```
+   cd npm-search
+   ```
 
-### Compile and Hot-Reload for Development
+3. Install the required dependencies.
+   ```
+   yarn install
+   ```
 
-```sh
-npm run dev
-```
+4. Start the development server.
+   ```
+   yarn dev
+   ```
 
-### Type-Check, Compile and Minify for Production
+5. Access the application by opening your browser and navigating to `http://localhost:5173`.
 
-```sh
-npm run build
-```
+## Contributing
 
-### Lint with [ESLint](https://eslint.org/)
+Contributions are welcome! To contribute to the NPM Search Web Application, follow these steps:
 
-```sh
-npm run lint
-```
+1. Fork the repository.
+
+2. Create a new branch for your feature or bug fix.
+   ```
+   git checkout -b feature/new-feature
+   ```
+
+3. Make your changes, commit them, and push to your fork.
+
+4. Submit a pull request detailing your changes and their purpose.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
