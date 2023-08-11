@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sup {
+  vertical-align: super;
+}
+.sub {
+  vertical-align: sub;
+}
