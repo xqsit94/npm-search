@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SearchBar from '@/components/search/SearchBar.vue'
+</script>
 
 <template>
   <main class="grow container mx-auto p-4">
-    <h1>NPM Search</h1>
+    <SearchBar />
   </main>
 </template>
