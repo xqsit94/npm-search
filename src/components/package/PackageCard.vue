@@ -1,26 +1,40 @@
 <script setup lang="ts">
 import PackageLinks from '@/components/package/PackageLinks.vue'
 import PackageCommands from '@/components/package/PackageCommands.vue'
+import { timesAgo } from '@/utils/functions'
+import type { Package } from '../../../env'
+
+defineProps<{
+  package: Package
+}>()
 </script>
 
 <template>
-  <div class="flex flex-col bg-base-200 p-4 rounded-xl">
-    <div class="flex flex-row justify-between">
+  <div class="flex flex-col bg-base-200 px-5 py-4">
+    <div class="flex flex-row flex-wrap justify-between">
       <div>
-        <h1 class="font-bold text-secondary">
-          adonis-shield <span class="ml-0.5 text-xs text-base-content sup">v6.1</span>
+        <h1 class="text-xl font-semibold text-secondary">
+          {{ package.name }}
+          <span class="ml-0.5 text-xs text-base-content sup">v{{ package.version }}</span>
         </h1>
         <p class="text-sm">
-          A middleware for AdonisJS to keep web applications secure from common web attacks
+          {{ package.description }}
         </p>
       </div>
-      <div class="text-sm">
-        <p>Last update: <span class="font-bold">2 months ago</span></p>
+      <div class="text-sm hidden md:block">
+        <p>
+          Last update: <span class="font-bold">{{ timesAgo(package.date) }}</span>
+        </p>
       </div>
     </div>
-    <div class="flex flex-row justify-between">
-      <PackageCommands package-name="slugify" />
-      <PackageLinks />
+    <div class="flex flex-row flex-wrap justify-between">
+      <PackageCommands :package-name="package.name" :package-version="package.version" />
+      <PackageLinks
+        :homepage="package.links.homepage"
+        :repository="package.links.repository"
+        :npm="package.links.npm"
+        :bugs="package.links.bugs"
+      />
     </div>
   </div>
 </template>
