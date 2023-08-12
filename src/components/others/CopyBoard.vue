@@ -24,7 +24,7 @@ const copyText = async () => {
 
 <template>
   <span
-    class="px-4 py-1.5 border border-dashed cursor-copy rounded-xl text-xs tooltip"
+    class="px-4 py-1.5 border border-dashed cursor-copy rounded-xl text-xs tooltip font-bold"
     data-tip="click to copy"
     @click="copyText"
     :class="bgClass"
