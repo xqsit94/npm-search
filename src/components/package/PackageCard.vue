@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-col bg-base-200 px-5 py-4">
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row flex-wrap justify-between">
       <div>
         <h1 class="text-xl font-semibold text-secondary">
           {{ package.name }}
@@ -21,13 +21,13 @@ defineProps<{
           {{ package.description }}
         </p>
       </div>
-      <div class="text-sm">
+      <div class="text-sm hidden md:block">
         <p>
           Last update: <span class="font-bold">{{ timesAgo(package.date) }}</span>
         </p>
       </div>
     </div>
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row flex-wrap justify-between">
       <PackageCommands :package-name="package.name" :package-version="package.version" />
       <PackageLinks
         :homepage="package.links.homepage"

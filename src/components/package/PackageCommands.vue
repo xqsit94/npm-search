@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div v-if="packageName" class="mt-4 flex flex-row gap-3">
+  <div v-if="packageName" class="mt-4 flex flex-row flex-wrap gap-3">
     <CopyBoard
       :text-to-copy="`npm i ${packageName}@${packageVersion}`"
       bg-class="bg-primary/20 hover:bg-primary-focus/20"
