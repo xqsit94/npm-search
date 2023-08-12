@@ -20,3 +20,7 @@ export const getNpmPackage = async (packageName: string): Promise<PackageDetail>
 export const timesAgo = (date: string) => {
   return moment(date, 'YYYY-MM-DDTHH:mm:ss.GMTZ').fromNow()
 }
+
+export const roundScore = (value: number) => {
+  return Math.round(value * 100)
+}

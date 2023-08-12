@@ -70,6 +70,7 @@ watch(search, async (value) => {
           :key="i"
           :flags="data.flags"
           :package="data.package"
+          :score="data.score"
           class="hover:bg-base-300"
           :class="[
             i === 0 ? 'rounded-t-2xl' : 'border-t border-base-content/40',
