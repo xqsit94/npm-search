@@ -37,10 +37,10 @@ const showButtons = ref<boolean>(false)
             </div>
           </div>
         </div>
-        <div v-if="showButtons" class="text-sm hidden md:block">
-          <ActionButtons />
+        <div v-show="showButtons" class="text-sm hidden md:block">
+          <ActionButtons :package-name="package.name" />
         </div>
-        <div v-else class="text-sm hidden md:block">
+        <div v-show="!showButtons" class="text-sm hidden md:block">
           <div class="flex items-center gap-5">
             <p>
               Last update: <span class="font-bold">{{ timesAgo(package.date) }}</span>
@@ -66,7 +66,7 @@ const showButtons = ref<boolean>(false)
       <p>
         Last update: <span class="font-bold">{{ timesAgo(package.date) }}</span>
       </p>
-      <ActionButtons />
+      <ActionButtons :package-name="package.name" />
     </div>
   </div>
 </template>

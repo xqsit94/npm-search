@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const NPM_BASE_URL = 'https://registry.npmjs.com/-/v1'
+const NPM_BASE_URL = 'https://registry.npmjs.com'
 
 export const NpmClient = axios.create({
   baseURL: NPM_BASE_URL,
