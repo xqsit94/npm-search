@@ -51,7 +51,7 @@ export interface Maintainer {
 }
 
 export interface Flags {
-  unstable: boolean
+  [key: string]: boolean
 }
 
 export interface Score {
@@ -85,7 +85,7 @@ export interface PackageDetail {
 }
 
 export interface DistTags {
-  latest: string
+  [key: string]: string
 }
 
 export interface Repository {

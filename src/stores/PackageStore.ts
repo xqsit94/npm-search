@@ -8,9 +8,6 @@ export const usePackageStore = defineStore('package', () => {
   const total = ref<number>(0)
   const from = ref<number>(0)
 
-  /* Single Package */
-  const packageDetail = ref<PackageDetail | null>(null)
-
   const setPackages = (data: PackageData[]) => {
     packages.value = data
     setFrom(packages.value.length)
@@ -40,17 +37,11 @@ export const usePackageStore = defineStore('package', () => {
     setTotal(data.total)
   }
 
-  const fetchPackageDetail = async (packageName: string) => {
-    packageDetail.value = await getNpmPackage(packageName)
-  }
-
   return {
     packages,
     total,
     from,
-    packageDetail,
     fetchPackages,
-    setPackages,
-    fetchPackageDetail
+    setPackages
   }
 })
