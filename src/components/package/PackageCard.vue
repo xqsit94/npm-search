@@ -38,7 +38,7 @@ const showButtons = ref<boolean>(false)
           </div>
         </div>
         <div v-show="showButtons" class="text-sm hidden md:block">
-          <ActionButtons :package-name="package.name" />
+          <ActionButtons :package="package" :flags="flags" :score="score" />
         </div>
         <div v-show="!showButtons" class="text-sm hidden md:block">
           <div class="flex items-center gap-5">
@@ -66,7 +66,7 @@ const showButtons = ref<boolean>(false)
       <p>
         Last update: <span class="font-bold">{{ timesAgo(package.date) }}</span>
       </p>
-      <ActionButtons :package-name="package.name" />
+      <ActionButtons :package="package" :flags="flags" :score="score" />
     </div>
   </div>
 </template>

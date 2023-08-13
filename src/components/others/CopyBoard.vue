@@ -4,6 +4,7 @@ import { useToast } from 'vue-toastification'
 const props = withDefaults(
   defineProps<{
     textToCopy: string
+    replace?: string
     bgClass?: string
   }>(),
   {
@@ -29,6 +30,6 @@ const copyText = async () => {
     @click="copyText"
     :class="bgClass"
   >
-    {{ textToCopy }}
+    {{ replace || textToCopy }}
   </span>
 </template>

@@ -7,3 +7,10 @@ export const NpmClient = axios.create({
   timeout: 5000,
   headers: { 'Content-Type': 'application/json' }
 })
+
+export const markdownOptions = {
+  html: true,
+  xhtmlOut: true,
+  breaks: true,
+  linkify: true
+}

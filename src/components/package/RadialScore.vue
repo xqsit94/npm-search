@@ -1,16 +1,28 @@
 <script setup lang="ts">
 import { roundScore } from '@/utils/functions'
 
-defineProps<{
-  score: number
-}>()
+withDefaults(
+  defineProps<{
+    score: number
+    size?: number
+    thickness?: number
+    className?: string
+    textSize?: string
+  }>(),
+  {
+    size: 2,
+    thickness: 2,
+    textSize: 'xs'
+  }
+)
 </script>
 
 <template>
   <div
     class="radial-progress"
-    :style="`--value: ${roundScore(score)}; --size: 2rem; --thickness: 2px`"
+    :class="className"
+    :style="`--value: ${roundScore(score)}; --size: ${size}rem; --thickness: ${thickness}px`"
   >
-    <span class="text-xs">{{ roundScore(score) }}</span>
+    <span :class="`text-${textSize}`">{{ roundScore(score) }}</span>
   </div>
 </template>

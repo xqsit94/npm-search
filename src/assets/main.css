@@ -8,3 +8,12 @@
 .sub {
   vertical-align: sub;
 }
+
+.modal-shade {
+  -webkit-backdrop-filter: blur(3px) contrast(0.9) brightness(0.9);
+  backdrop-filter: blur(3px) contrast(0.9) brightness(0.9);
+  transition: -webkit-backdrop-filter 0.2s ease-out;
+  transition:
+    backdrop-filter 0.2s ease-out,
+    -webkit-backdrop-filter 0.2s ease-out;
+}

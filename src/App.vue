@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import AppHeader from '@/components/shared/AppHeader.vue'
 import AppFooter from '@/components/shared/AppFooter.vue'
-import PackageDetail from '@/components/package/PackageDetail.vue'
+import PackageDetail from '@/components/package-detail/PackageDetail.vue'
 </script>
 
 <template>
