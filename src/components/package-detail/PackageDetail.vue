@@ -6,7 +6,7 @@ import PackageLinks from '@/components/package/PackageLinks.vue'
 import { markdownOptions } from '@/utils/constants'
 import RadialScore from '@/components/package/RadialScore.vue'
 import CopyBoard from '@/components/others/CopyBoard.vue'
-import { timesAgo } from '../../utils/functions'
+import { repoBreak, timesAgo } from '@/utils/functions'
 
 const { isLoading, showModal, npmPackage, npmPackageDetail, npmPackageFlags, npmPackageScore } =
   storeToRefs(usePackageDetailStore())
@@ -26,21 +26,18 @@ const { closeModal } = usePackageDetailStore()
         <progress class="progress w-56"></progress>
       </div>
       <div v-else-if="npmPackageDetail">
-        <div class="flex flex-row flex-wrap justify-center gap-3 my-5">
+        <div class="flex flex-row flex-wrap justify-center gap-3 my-10">
           <CopyBoard
             bg-class="bg-primary/20 hover:bg-primary-focus/20"
             :text-to-copy="`npm i ${npmPackage.name}@${npmPackage.version}`"
-            :replace="`npm i`"
           />
           <CopyBoard
             bg-class="bg-secondary/20 hover:bg-secondary-focus/20"
             :text-to-copy="`yarn add ${npmPackage.name}@${npmPackage.version}`"
-            :replace="`yarn add`"
           />
           <CopyBoard
             bg-class="bg-accent/20 hover:bg-accent-focus/20"
             :text-to-copy="`pnpm add ${npmPackage.name}@${npmPackage.version}`"
-            :replace="`pnpm add`"
           />
         </div>
         <div class="flex flex-row flex-wrap gap-1 justify-center">
@@ -55,6 +52,22 @@ const { closeModal } = usePackageDetailStore()
           </div>
         </div>
         <p class="my-2 text-center">{{ npmPackageDetail.description }}</p>
+        <div class="flex justify-center gap-4 my-4">
+          <img
+            v-if="npmPackage.links?.repository"
+            alt="GitHub Repo stars"
+            :src="`https://img.shields.io/github/stars/${repoBreak(npmPackage.links.repository)}`"
+          />
+          <img
+            v-if="npmPackage.links?.repository"
+            alt="GitHub Repo forks"
+            :src="`https://img.shields.io/github/forks/${repoBreak(npmPackage.links.repository)}`"
+          />
+          <img
+            alt="GitHub Repo forks"
+            :src="`https://img.shields.io/bundlephobia/min/${npmPackage.name}`"
+          />
+        </div>
         <div class="my-5 flex flex-wrap gap-2 justify-center">
           <div
             v-for="keyword in npmPackageDetail.keywords"
