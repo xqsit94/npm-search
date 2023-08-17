@@ -12,9 +12,10 @@ The NPM Search is a user-friendly interface that allows users to search for pack
 
 - [x] **Interactive UI**: The user interface is designed to be intuitive and responsive, providing a smooth experience across different devices and screen sizes.
 
+- [x] **Package Statistics**: Gain insights into package popularity, package minified size and GitHub repository stars to help users make informed decisions.
+
 - [ ] **Sorting and Filtering**: Users can sort search results based on relevance, popularity, or date. Filtering options allow users to narrow down results by scope, keywords, and more.
 
-- [ ] **Package Statistics**: Gain insights into package popularity, weekly downloads, and GitHub repository stars to help users make informed decisions.
 
 ## Installation and Usage
 

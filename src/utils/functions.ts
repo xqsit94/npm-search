@@ -24,3 +24,7 @@ export const timesAgo = (date: string) => {
 export const roundScore = (value: number) => {
   return Math.round(value * 100)
 }
+
+export const repoBreak = (repo: string) => {
+  return repo.replace('https://github.com/', '')
+}
